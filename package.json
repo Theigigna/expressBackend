@@ -1,0 +1,29 @@
+{
+  "name": "expressbackend",
+  "version": "1.0.0",
+  "description": "My first express backend",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@types/node": "^16.11.1",
+    "mongodb": "^4.1.3",
+    "express": "^4.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Theigigna/expressBackend.git"
+  },
+  "keywords": [
+    "express",
+    "backend",
+    "git"
+  ],
+  "author": "Ignacio Ribera Diaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Theigigna/expressBackend/issues"
+  },
+  "homepage": "https://github.com/Theigigna/expressBackend#readme"
+}

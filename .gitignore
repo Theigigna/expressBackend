@@ -1,0 +1,15 @@
+# Logs
+logs
+*.log
+
+# Dependency directories
+node_modules/
+
+# dotenv environment variables file
+.env
+
+# JS files
+**/*.js
+
+# build output
+dist/
