@@ -63,3 +63,8 @@ enum permission {
 
 #### MongoDB
 Los datos se guardarán en una base de datos de `MongoDB`. Habrá 2 colecciones diferentes, una para los ususarios y otra para las películas.
+
+
+### Structure
+
+Router -> [Validator, Controller -> [Service -> [Models -> [Repository]]]]
