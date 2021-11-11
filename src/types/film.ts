@@ -8,4 +8,5 @@ export interface Film {
   viewingYear: number;
   duration?: number;
   link?: string;
+  score?: number;
 }

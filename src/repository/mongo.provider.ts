@@ -16,7 +16,9 @@ export class MongoProvider {
       .then((result) => {
         this._client = result;
         this._operative = true;
-        console.log(`Successfully connected to mongo on: ${mongoURL}`);
+        console.log(
+          `Successfully connected to mongo on: ${mongoURL}. | ${this.constructor.name}`
+        );
       })
       .catch((error) => {
         console.log(
@@ -42,21 +44,36 @@ export class MongoProvider {
    * @memberof mongo.provider
    */
   public find(collection: string, field: string, value: string): Promise<any> {
+    const findMap = {};
+    findMap[field] = value;
+    return this.findObject(collection, findMap);
+  }
+
+  /**
+   * Find objects from mongoDB in a specific collection with more than one field
+   *
+   * @param {string} collection name of the collection object will be searched
+   * @param {string} object name of the field used for searching
+   * @param {string} value value of the field used for searching
+   * @returns {Promise<any>} data found in mongo
+   * @memberof mongo.provider
+   */
+  public findObject(collection: string, object: {}): Promise<any> {
     const mongoCollection: Collection = this.getCollection(collection);
     return new Promise(async (resolve, reject) => {
       try {
-        const findMap = {};
-        findMap[field] = value;
-        const userData = await mongoCollection.find(findMap).toArray();
+        const userData = await mongoCollection.find(object).toArray();
         console.log(
           `Finding ${JSON.stringify(
-            findMap
-          )} in ${collection}, results: ${JSON.stringify(userData)}`
+            object
+          )} in ${collection}, results: ${JSON.stringify(userData)}. | ${
+            this.constructor.name
+          }`
         );
         userData.length >= 1
           ? resolve(userData)
-          : reject({
-              message: `There is not ${JSON.stringify(findMap)}`,
+          : resolve({
+              message: `There is not ${JSON.stringify(object)}`,
               errorCode: 404,
             });
       } catch (error) {
@@ -79,14 +96,20 @@ export class MongoProvider {
       mongoCollection
         .insertOne(object)
         .then((result) => {
-          console.log(`Inserted ${JSON.stringify(object)} into ${collection}`);
+          console.log(
+            `Inserted ${JSON.stringify(object)} into ${collection}. | ${
+              this.constructor.name
+            }`
+          );
           resolve(result);
         })
         .catch((error) => {
           console.log(
             `Error inserting ${JSON.stringify(
               object
-            )} inside ${collection}. Error: ${JSON.stringify(error)}`
+            )} inside ${collection}. Error: ${JSON.stringify(error)}. | ${
+              this.constructor.name
+            }`
           );
           reject(error);
         });
@@ -107,25 +130,42 @@ export class MongoProvider {
     field: string,
     value: string
   ): Promise<any> {
+    const deleteMap = {};
+    deleteMap[field] = value;
+    return this.deleteObject(collection, deleteMap);
+  }
+
+  /**
+   * Delete objects from mongoDB in a specific collection
+   *
+   * @param {string} collection name of the collection object will be deleted
+   * @param {string} field name of the field used for deleting
+   * @param {string} value value of the field used for deleting
+   * @returns {Promise<any>} { acknowledged: boolean, deletedCount: number }
+   * @memberof mongo.provider
+   */
+  public deleteObject(collection: string, object: any): Promise<any> {
     const mongoCollection: Collection = this.getCollection(collection);
     return new Promise((resolve, reject) => {
-      const deleteMap = {};
-      deleteMap[field] = value;
       mongoCollection
-        .deleteMany(deleteMap)
+        .deleteMany(object)
         .then((result) => {
           console.log(
             `Successfully deleted ${
               result.deletedCount
-            } objects (${JSON.stringify(deleteMap)}) from ${collection}`
+            } objects (${JSON.stringify(object)}) from ${collection}. | ${
+              this.constructor.name
+            }`
           );
           resolve(result);
         })
         .catch((error) => {
           console.log(
-            `Error deleting ${deleteMap} from ${field}. Error: ${JSON.stringify(
-              error
-            )}`
+            `Error deleting ${JSON.stringify(
+              object
+            )} from ${collection}. Error: ${JSON.stringify(error)}. | ${
+              this.constructor.name
+            }`
           );
           reject(error);
         });
@@ -144,7 +184,7 @@ export class MongoProvider {
       return this._db.collection(collectionName);
     } else {
       throw new Error(
-        `Error getting ${collectionName} collection. Database is not operative.`
+        `Error getting ${collectionName} collection. Database is not operative. | ${this.constructor.name}`
       );
     }
   }
