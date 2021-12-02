@@ -46,6 +46,7 @@ export class FilmValidator {
     res: express.Response,
     next: express.NextFunction
   ): void {
+    console.log(`Film to validate: ${JSON.stringify(req.body)}`);
     const result = this.filmSchema.validate(req.body);
     if (result.error) {
       console.log(
@@ -54,7 +55,7 @@ export class FilmValidator {
       next(result.error);
     } else {
       console.log(
-        `Validated create film ${req.body}. | ${this.constructor.name}`
+        `Validated creating film ${req.body}. | ${this.constructor.name}`
       );
       next();
     }

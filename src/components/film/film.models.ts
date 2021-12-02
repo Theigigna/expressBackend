@@ -1,0 +1,125 @@
+import { MongoRepository } from "../../repository/mongo.repository";
+import { Film, User } from "../../types";
+
+export class FilmModels {
+  private readonly _repositoryMongoDb: MongoRepository;
+
+  constructor(providerMongoDb: MongoRepository) {
+    this._repositoryMongoDb = providerMongoDb;
+  }
+
+  public getAllFilmsByUser(findingUser: string): Promise<Array<Film>> {
+    console.log(`getAllFilmsByUser. | ${this.constructor.name}`);
+    return new Promise((resolve, reject) => {
+      this._repositoryMongoDb
+        .findFilm({ user: findingUser })
+        .then((data) => {
+          resolve(data);
+        })
+        .catch((error) => {
+          console.log(
+            `Error getAllFilmsByUser. ${JSON.stringify(error)}. | ${
+              this.constructor.name
+            }`
+          );
+          reject(error);
+        });
+    });
+  }
+  public getAllFilmsByTitle(findingTitle: string): Promise<Array<Film>> {
+    console.log(`getAllFilmsByTitle. | ${this.constructor.name}`);
+    return new Promise((resolve, reject) => {
+      this._repositoryMongoDb
+        .findFilm({ title: findingTitle })
+        .then((data) => {
+          resolve(data);
+        })
+        .catch((error) => {
+          console.log(
+            `Error getAllFilmsByTitle. ${JSON.stringify(error)}. | ${
+              this.constructor.name
+            }`
+          );
+          reject(error);
+        });
+    });
+  }
+  public getAllFilmsByUserAndTitle(
+    findingUser: string,
+    findingTitle: string
+  ): Promise<Array<Film>> {
+    console.log(`getAllFilmsByUserAndTitle. | ${this.constructor.name}`);
+    return new Promise((resolve, reject) => {
+      this._repositoryMongoDb
+        .findFilm({ user: findingUser, title: findingTitle })
+        .then((data) => {
+          resolve(data);
+        })
+        .catch((error) => {
+          console.log(
+            `Error getAllFilmsByUserAndTitle. ${JSON.stringify(error)}. | ${
+              this.constructor.name
+            }`
+          );
+          reject(error);
+        });
+    });
+  }
+  public insertFilm(insertingFilm: Film): Promise<any> {
+    console.log(
+      `insertFilm ${JSON.stringify(insertingFilm)}. | ${this.constructor.name}`
+    );
+    return new Promise((resolve, reject) => {
+      this._repositoryMongoDb
+        .insertFilm(insertingFilm)
+        .then((data) => {
+          resolve(data);
+        })
+        .catch((error) => {
+          console.log(
+            `Error insertFilm. ${JSON.stringify(error)}. | ${
+              this.constructor.name
+            }`
+          );
+          reject(error);
+        });
+    });
+  }
+
+  public getAllUsersByUser(findingUser: string): Promise<Array<User>> {
+    console.log(`getAllUsersByUser. | ${this.constructor.name}`);
+    return new Promise((resolve, reject) => {
+      this._repositoryMongoDb
+        .findUser(findingUser)
+        .then((data) => {
+          resolve(data);
+        })
+        .catch((error) => {
+          console.log(
+            `Error getAllUsersByUser. ${JSON.stringify(error)}. | ${
+              this.constructor.name
+            }`
+          );
+          reject(error);
+        });
+    });
+  }
+  public insertUser(insertingUser: User): Promise<any> {
+    console.log(`insertUser. | ${this.constructor.name}`);
+    return new Promise((resolve, reject) => {
+      this._repositoryMongoDb
+        .insertUser(insertingUser)
+        .then((data) => {
+          resolve(data);
+        })
+        .catch((error) => {
+          console.log(
+            `Error insertUser. ${JSON.stringify(error)}. | ${
+              this.constructor.name
+            }`
+          );
+          reject(error);
+        });
+    });
+  }
+}

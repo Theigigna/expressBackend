@@ -31,7 +31,7 @@ export class MongoProvider {
   }
 
   get operative(): boolean {
-    return this.operative;
+    return this._operative;
   }
 
   /**
@@ -91,7 +91,17 @@ export class MongoProvider {
    * @memberof mongo.provider
    */
   public insert(collection: string, object: any): Promise<any> {
-    const mongoCollection: Collection = this.getCollection(collection);
+    console.log(`insert. | ${this.constructor.name}`);
+    let mongoCollection: Collection;
+    try {
+      mongoCollection = this._db.collection(collection);
+      console.log(
+        `Obtained Collection ${this.constructor.name}. | ${this.constructor.name}`
+      );
+    } catch (error) {
+      console.log(`Error getting collecion ${collection}`);
+      throw error;
+    }
     return new Promise((resolve, reject) => {
       mongoCollection
         .insertOne(object)

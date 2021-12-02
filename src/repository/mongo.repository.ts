@@ -1,6 +1,6 @@
 "use strict";
 import { MongoProvider } from "./mongo.provider";
-import { User, Film, HttpInfoResponse } from "../types";
+import { User, Film } from "../types";
 import { ConfigLoader } from "../config/config";
 
 export class MongoRepository {
@@ -12,17 +12,12 @@ export class MongoRepository {
     this._provider = provider;
   }
 
-  // public addNewUser(user: User): number {
-
-  // }
-
-  public findUser(userName: string): any {
-    if (userName != "") {
+  public findUser(findUserObject: string): Promise<any> {
+    return new Promise((resolve, reject) => {
       this._provider
-        .find(this._config.mongoUserCollection, "userName", userName)
+        .find(this._config.mongoUserCollection, "userName", findUserObject)
         .then((result) => {
-          console.log("then");
-          return result;
+          resolve(result);
         })
         .catch((error) => {
           console.log(
@@ -30,76 +25,100 @@ export class MongoRepository {
               this.constructor.name
             }`
           );
-          return {
-            message: JSON.stringify(error),
-            errorCode: 500,
-          };
+          reject(error);
         });
-    } else {
-      return {
-        message: "El campo userName no puede ser vacio",
-        httpCode: 400,
-      };
-    }
+    });
   }
 
-  public findFilm(findFilmObject: {}): any {
-    this._provider
-      .findObject(this._config.mongoUserCollection, findFilmObject)
-      .then((result) => {
-        console.log("then");
-        return result;
-      })
-      .catch((error) => {
-        console.log(
-          `Error filnding film ${JSON.stringify(error)}. | ${
-            this.constructor.name
-          }`
-        );
-        return {
-          message: JSON.stringify(error),
-          errorCode: 500,
-        };
-      });
+  public insertUser(insertUserObject: User): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this._provider
+        .insert(this._config.mongoUserCollection, insertUserObject)
+        .then((result) => {
+          resolve(result);
+        })
+        .catch((error) => {
+          console.log(
+            `Error inserting user ${JSON.stringify(error)}. | ${
+              this.constructor.name
+            }`
+          );
+          reject(error);
+        });
+    });
   }
 
-  public insertFilm(findFilmObject: Film): any {
-    this._provider
-      .insert(this._config.mongoUserCollection, findFilmObject)
-      .then((result) => {
-        console.log("then");
-        return result;
-      })
-      .catch((error) => {
-        console.log(
-          `Error inserting film ${JSON.stringify(error)}. | ${
-            this.constructor.name
-          }`
-        );
-        return {
-          message: JSON.stringify(error),
-          errorCode: 500,
-        };
-      });
+  public deleteUser(deleteUserObject: {}): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this._provider
+        .deleteObject(this._config.mongoUserCollection, deleteUserObject)
+        .then((result) => {
+          resolve(result);
+        })
+        .catch((error) => {
+          console.log(
+            `Error deleting user ${JSON.stringify(error)}. | ${
+              this.constructor.name
+            }`
+          );
+          reject(error);
+        });
+    });
   }
 
-  public deleteFilm(deleteFilmObject: {}): any {
-    this._provider
-      .deleteObject(this._config.mongoUserCollection, deleteFilmObject)
-      .then((result) => {
-        console.log("then");
-        return result;
-      })
-      .catch((error) => {
-        console.log(
-          `Error deleting film ${JSON.stringify(error)}. | ${
-            this.constructor.name
-          }`
-        );
-        return {
-          message: JSON.stringify(error),
-          errorCode: 500,
-        };
-      });
+  public findFilm(findFilmObject: {}): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this._provider
+        .findObject(this._config.mongoFilmCollection, findFilmObject)
+        .then((result) => {
+          resolve(result);
+        })
+        .catch((error) => {
+          console.log(
+            `Error filnding user ${JSON.stringify(error)}. | ${
+              this.constructor.name
+            }`
+          );
+          reject(error);
+        });
+    });
+  }
+
+  public insertFilm(insertFilmObject: Film): Promise<any> {
+    console.log(`insertFilm. | ${this.constructor.name}`);
+    return new Promise((resolve, reject) => {
+      this._provider
+        .insert(this._config.mongoFilmCollection, insertFilmObject)
+        .then((result) => {
+          console.log("Then insert Film");
+          resolve(result);
+        })
+        .catch((error) => {
+          console.log(
+            `Error insertFilm ${JSON.stringify(error)}. | ${
+              this.constructor.name
+            }`
+          );
+          reject(error);
+        });
+    });
+  }
+
+  public deleteFilm(deleteFilmObject: {}): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this._provider
+        .deleteObject(this._config.mongoFilmCollection, deleteFilmObject)
+        .then((result) => {
+          resolve(result);
+        })
+        .catch((error) => {
+          console.log(
+            `Error deleting film ${JSON.stringify(error)}. | ${
+              this.constructor.name
+            }`
+          );
+          reject(error);
+        });
+    });
   }
 }

@@ -2,7 +2,11 @@
 
 import { Router } from "express";
 import { MongoRepository } from "../../repository/mongo.repository";
+import { FilmController } from "./film.controller";
+import { FilmModels } from "./film.models";
+import { FilmServices } from "./film.service";
 import { FilmValidator } from "./film.validator";
+import fileUpload from "express-fileupload";
 
 const PREFIX_PATH = "/api/v1";
 
@@ -15,6 +19,7 @@ export class FilmRoutes {
 
   constructor(api: Router, mongoRepository: MongoRepository) {
     this._api = api;
+    // this._api.use(fileUpload());
     this._filmModels = new FilmModels(mongoRepository);
     this._filmServices = new FilmServices(this._filmModels);
     this._filmController = new FilmController(this._filmServices);
@@ -27,19 +32,19 @@ export class FilmRoutes {
       .route(`${PREFIX_PATH}/film`)
       .post(
         this._filmValidator.film.bind(this._filmValidator),
-        this._filmController.createFilm.bind(this._filmController)
+        this._filmController.insertFilm.bind(this._filmController)
       );
-    this._api
-      .route(`${PREFIX_PATH}/film`)
-      .get(
-        this._filmValidator.findFilm.bind(this._filmValidator),
-        this._filmController.findFilm.bind(this._filmController)
-      );
-    this._api
-      .route(`${PREFIX_PATH}/deleteFilm`)
-      .post(
-        this._filmValidator.deleteFilm.bind(this._filmValidator),
-        this._filmController.deleteFilm.bind(this._filmController)
-      );
+    // this._api
+    //   .route(`${PREFIX_PATH}/film`)
+    //   .get(
+    //     this._filmValidator.findFilm.bind(this._filmValidator),
+    //     this._filmController.findFilm.bind(this._filmController)
+    //   );
+    // this._api
+    //   .route(`${PREFIX_PATH}/deleteFilm`)
+    //   .post(
+    //     this._filmValidator.deleteFilm.bind(this._filmValidator),
+    //     this._filmController.deleteFilm.bind(this._filmController)
+    //   );
   }
 }
