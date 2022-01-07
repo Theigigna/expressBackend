@@ -8,6 +8,7 @@ export class UserValidator {
    * This schema is for create users
    */
   private readonly userSchema = Joi.object({
+    _id: Joi.string().optional(),
     userName: Joi.string().min(1).max(100).required(),
     password: Joi.string().min(1).max(100).required(),
     name: Joi.string().min(1).required(),
@@ -26,6 +27,7 @@ export class UserValidator {
    */
   private readonly deleteUserSchema = Joi.object({
     userName: Joi.string().min(1).max(100).required(),
+    password: Joi.string().min(1).max(100).required(),
   }).required();
 
   /**

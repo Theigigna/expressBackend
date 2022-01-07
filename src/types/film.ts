@@ -2,10 +2,13 @@
  * Film object format to store in database
  */
 export interface Film {
-  user: string;
+  _id?: string;
+  userName: string;
   title: string;
   year: number;
-  viewingYear: number;
+  viewingDay?: number;
+  viewingMonth?: number;
+  viewingYear?: number;
   duration?: number;
   link?: string;
   score?: number;

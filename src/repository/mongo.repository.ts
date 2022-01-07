@@ -121,4 +121,26 @@ export class MongoRepository {
         });
     });
   }
+
+  public userExists(userName: string): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      this._provider
+        .find(this._config.mongoUserCollection, "userName", userName)
+        .then((result) => {
+          if (Array.isArray(result) && result.length >= 1) {
+            resolve(true);
+          } else {
+            resolve(false);
+          }
+        })
+        .catch((error) => {
+          console.log(
+            `Error finding ${userName} user ${JSON.stringify(error)}. | ${
+              this.constructor.name
+            }`
+          );
+          reject(error);
+        });
+    });
+  }
 }

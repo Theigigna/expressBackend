@@ -35,6 +35,12 @@ export class FilmRoutes {
         this._filmController.insertFilm.bind(this._filmController)
       );
     // this._api
+    //   .route(`${PREFIX_PATH}/lastFilm`)
+    //   .delete(
+    //     this._filmValidator.deleteLastFilm.bind(this._filmValidator),
+    //     this._filmController.deleteLastFilm.bind(this._filmController)
+    //   );
+    // this._api
     //   .route(`${PREFIX_PATH}/film`)
     //   .get(
     //     this._filmValidator.findFilm.bind(this._filmValidator),

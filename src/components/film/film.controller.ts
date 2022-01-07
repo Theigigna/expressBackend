@@ -2,10 +2,10 @@ import { FilmServices } from "./film.service";
 import * as express from "express";
 
 export class FilmController {
-  private readonly loggingService: FilmServices;
+  private readonly filmService: FilmServices;
 
   constructor(service: FilmServices) {
-    this.loggingService = service;
+    this.filmService = service;
   }
 
   public insertFilm(
@@ -13,7 +13,7 @@ export class FilmController {
     res: express.Response,
     next: express.NextFunction
   ): void {
-    this.loggingService
+    this.filmService
       .insertFilm(req.body)
       .then((result) => {
         res.status(200).json(result);

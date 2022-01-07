@@ -3,6 +3,7 @@
 import express from "express";
 import { ConfigLoader } from "./config/config";
 import { FilmRoutes } from "./components/film/film.routes";
+import { UserRoutes } from "./components/user/user.routes";
 import { MongoRepository } from "./repository/mongo.repository";
 
 export class App {
@@ -20,6 +21,8 @@ export class App {
       this._app.use(express.json());
       const filmRoutes = new FilmRoutes(this._app, this._repository);
       filmRoutes.routes();
+      const userRoutes = new UserRoutes(this._app, this._repository);
+      userRoutes.routes();
       this._app.listen(this._config.port);
       console.log(`Server listening on port ${this._config.port}`);
     } catch (error) {

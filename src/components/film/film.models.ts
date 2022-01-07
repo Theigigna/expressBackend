@@ -8,7 +8,7 @@ export class FilmModels {
     this._repositoryMongoDb = providerMongoDb;
   }
 
-  public getAllFilmsByUser(findingUser: string): Promise<Array<Film>> {
+  public getAllFilmsByUser(findingUser: string): Promise<Array<any>> {
     console.log(`getAllFilmsByUser. | ${this.constructor.name}`);
     return new Promise((resolve, reject) => {
       this._repositoryMongoDb
@@ -26,7 +26,7 @@ export class FilmModels {
         });
     });
   }
-  public getAllFilmsByTitle(findingTitle: string): Promise<Array<Film>> {
+  public getAllFilmsByTitle(findingTitle: string): Promise<Array<any>> {
     console.log(`getAllFilmsByTitle. | ${this.constructor.name}`);
     return new Promise((resolve, reject) => {
       this._repositoryMongoDb
@@ -47,7 +47,7 @@ export class FilmModels {
   public getAllFilmsByUserAndTitle(
     findingUser: string,
     findingTitle: string
-  ): Promise<Array<Film>> {
+  ): Promise<Array<any>> {
     console.log(`getAllFilmsByUserAndTitle. | ${this.constructor.name}`);
     return new Promise((resolve, reject) => {
       this._repositoryMongoDb
