@@ -1,0 +1,399 @@
+/* 1 */
+{
+    "_id" : ObjectId("61e84adf2d0a5e357a55fcf0"),
+    "userName" : "Theigigna",
+    "title" : "Asalto en la noche",
+    "year" : "2018",
+    "date" : {
+        "viewingDay" : 4,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 88,
+    "link" : "https://www.filmaffinity.com/es/film632491.html",
+    "score" : 4
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("61e84c982d0a5e357a55fcf1"),
+    "userName" : "Theigigna",
+    "title" : "La apariencia de las cosas",
+    "year" : "2021",
+    "date" : {
+        "viewingDay" : 5,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 121,
+    "link" : "https://www.filmaffinity.com/es/film658585.html",
+    "score" : 2
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("61e84cd02d0a5e357a55fcf2"),
+    "userName" : "Theigigna",
+    "title" : "Memories of Murder (Crónica de un asesino en serie)",
+    "year" : "2003",
+    "date" : {
+        "viewingDay" : 6,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 130,
+    "link" : "https://www.filmaffinity.com/es/film712766.html",
+    "score" : 8
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("61e84d1e2d0a5e357a55fcf3"),
+    "userName" : "Theigigna",
+    "title" : "John Wick: Pacto de sangre",
+    "year" : "2017",
+    "date" : {
+        "viewingDay" : 7,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 122,
+    "link" : "https://www.filmaffinity.com/es/film981917.html",
+    "score" : 8
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("61e853bf2d0a5e357a55fcf4"),
+    "userName" : "Theigigna",
+    "title" : "John Wick: Capítulo 3 - Parabellum",
+    "year" : "2019",
+    "date" : {
+        "viewingDay" : 7,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 130,
+    "link" : "https://www.filmaffinity.com/es/film615543.html",
+    "score" : 7
+}
+
+/* 6 */
+{
+    "_id" : ObjectId("61e854102d0a5e357a55fcf5"),
+    "userName" : "Theigigna",
+    "title" : "John Wick (Otro día para matar)",
+    "year" : "2014",
+    "date" : {
+        "viewingDay" : 7,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 101,
+    "link" : "https://www.filmaffinity.com/es/film351657.html",
+    "score" : 7
+}
+
+/* 7 */
+{
+    "_id" : ObjectId("61e8548f2d0a5e357a55fcf6"),
+    "userName" : "Theigigna",
+    "title" : "The Closet",
+    "year" : "2020",
+    "date" : {
+        "viewingDay" : 8,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 97,
+    "link" : "https://www.filmaffinity.com/es/film139769.html",
+    "score" : 4
+}
+
+/* 8 */
+{
+    "_id" : ObjectId("61e854e82d0a5e357a55fcf7"),
+    "userName" : "Theigigna",
+    "title" : "12 monos",
+    "year" : "1995",
+    "date" : {
+        "viewingDay" : 8,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 130,
+    "link" : "https://www.filmaffinity.com/es/film486826.html",
+    "score" : 7
+}
+
+/* 9 */
+{
+    "_id" : ObjectId("61e8553b2d0a5e357a55fcf8"),
+    "userName" : "Theigigna",
+    "title" : "Tomb Raider",
+    "year" : "2018",
+    "date" : {
+        "viewingDay" : 8,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 122,
+    "link" : "https://www.filmaffinity.com/es/film213699.html",
+    "score" : 5
+}
+
+/* 10 */
+{
+    "_id" : ObjectId("61e855a92d0a5e357a55fcf9"),
+    "userName" : "Theigigna",
+    "title" : "Sospechosos habituales",
+    "year" : "1995",
+    "date" : {
+        "viewingDay" : 9,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 105,
+    "link" : "https://www.filmaffinity.com/es/film408515.html",
+    "score" : 7
+}
+
+/* 11 */
+{
+    "_id" : ObjectId("61e856572d0a5e357a55fcfa"),
+    "userName" : "Theigigna",
+    "title" : "Los otros",
+    "year" : "2001",
+    "date" : {
+        "viewingDay" : 9,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 104,
+    "link" : "https://www.filmaffinity.com/es/film370368.html",
+    "score" : 6
+}
+
+/* 12 */
+{
+    "_id" : ObjectId("61e857e22d0a5e357a55fcfb"),
+    "userName" : "Theigigna",
+    "title" : "El otro guardaespaldas",
+    "year" : "2017",
+    "date" : {
+        "viewingDay" : 10,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 111,
+    "link" : "https://www.filmaffinity.com/es/film882279.html",
+    "score" : 7
+}
+
+/* 13 */
+{
+    "_id" : ObjectId("61e8581f2d0a5e357a55fcfc"),
+    "userName" : "Theigigna",
+    "title" : "El otro guardaespaldas 2",
+    "year" : "2021",
+    "date" : {
+        "viewingDay" : 10,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 100,
+    "link" : "https://www.filmaffinity.com/es/film530966.html",
+    "score" : 6
+}
+
+/* 14 */
+{
+    "_id" : ObjectId("61e858b32d0a5e357a55fcfd"),
+    "userName" : "Theigigna",
+    "title" : "Scream. Vigila quién llama",
+    "year" : "1996",
+    "date" : {
+        "viewingDay" : 11,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 111,
+    "link" : "https://www.filmaffinity.com/es/film677939.html",
+    "score" : 6
+}
+
+/* 15 */
+{
+    "_id" : ObjectId("61e858d62d0a5e357a55fcfe"),
+    "userName" : "Theigigna",
+    "title" : "Scream 2",
+    "year" : "1997",
+    "date" : {
+        "viewingDay" : 11,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 120,
+    "link" : "https://www.filmaffinity.com/es/film149099.html",
+    "score" : 7
+}
+
+/* 16 */
+{
+    "_id" : ObjectId("61e85a002d0a5e357a55fcff"),
+    "userName" : "Theigigna",
+    "title" : "Scream 3",
+    "year" : "2000",
+    "date" : {
+        "viewingDay" : 11,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 116,
+    "link" : "https://www.filmaffinity.com/es/film942030.html",
+    "score" : 5
+}
+
+/* 17 */
+{
+    "_id" : ObjectId("61e85a232d0a5e357a55fd00"),
+    "userName" : "Theigigna",
+    "title" : "Scream 4",
+    "year" : "2011",
+    "date" : {
+        "viewingDay" : 11,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 111,
+    "link" : "https://www.filmaffinity.com/es/film612858.html",
+    "score" : 6
+}
+
+/* 18 */
+{
+    "_id" : ObjectId("61e85b872d0a5e357a55fd01"),
+    "userName" : "Theigigna",
+    "title" : "Plan oculto",
+    "year" : "2006",
+    "date" : {
+        "viewingDay" : 12,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 129,
+    "link" : "https://www.filmaffinity.com/es/film858463.html",
+    "score" : 7
+}
+
+/* 19 */
+{
+    "_id" : ObjectId("61e85bb72d0a5e357a55fd02"),
+    "userName" : "Theigigna",
+    "title" : "Objetivo: Londres",
+    "year" : "2016",
+    "date" : {
+        "viewingDay" : 12,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 99,
+    "link" : "https://www.filmaffinity.com/es/film994525.html",
+    "score" : 5
+}
+
+/* 20 */
+{
+    "_id" : ObjectId("61e85bdf2d0a5e357a55fd03"),
+    "userName" : "Theigigna",
+    "title" : "Objetivo: Washington D.C.",
+    "year" : "2019",
+    "date" : {
+        "viewingDay" : 12,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 120,
+    "link" : "https://www.filmaffinity.com/es/film351482.html",
+    "score" : 6
+}
+
+/* 21 */
+{
+    "_id" : ObjectId("61e85c1d2d0a5e357a55fd04"),
+    "userName" : "Theigigna",
+    "title" : "El Escuadrón Suicida",
+    "year" : "2021",
+    "date" : {
+        "viewingDay" : 13,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 132,
+    "link" : "https://www.filmaffinity.com/es/film124669.html",
+    "score" : 7
+}
+
+/* 22 */
+{
+    "_id" : ObjectId("61e85c762d0a5e357a55fd05"),
+    "userName" : "Theigigna",
+    "title" : "Scream",
+    "year" : "2022",
+    "date" : {
+        "viewingDay" : 15,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 114,
+    "link" : "https://www.filmaffinity.com/es/film738775.html",
+    "score" : 8
+}
+
+/* 23 */
+{
+    "_id" : ObjectId("61e85cce2d0a5e357a55fd06"),
+    "userName" : "Theigigna",
+    "title" : "El páramo",
+    "year" : "2021",
+    "date" : {
+        "viewingDay" : 18,
+        "viewingMonth" : 1,
+        "viewingYear" : 2022
+    },
+    "duration" : 91,
+    "link" : "https://www.filmaffinity.com/es/film787296.html",
+    "score" : 3
+}
+
+/* 24 */
+{
+    "_id" : ObjectId("61e85dcb2d0a5e357a55fd07"),
+    "userName" : "Theigigna",
+    "title" : "Life (Vida)",
+    "year" : "2017",
+    "duration" : 103,
+    "link" : "https://www.filmaffinity.com/es/film736747.html",
+    "score" : 6,
+    "date" : {
+        "viewingDay" : 19,
+        "viewingMonth" : 0,
+        "viewingYear" : 2022
+    }
+}
+
+/* 25 */
+{
+    "_id" : ObjectId("61e85edb2d0a5e357a55fd08"),
+    "userName" : "Theigigna",
+    "title" : "Sin pudor",
+    "year" : "2022",
+    "duration" : 96,
+    "link" : "https://www.filmaffinity.com/es/film604524.html",
+    "score" : 4,
+    "date" : {
+        "viewingDay" : 19,
+        "viewingMonth" : 0,
+        "viewingYear" : 2022
+    }
+}

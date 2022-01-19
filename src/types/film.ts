@@ -6,9 +6,11 @@ export interface Film {
   userName: string;
   title: string;
   year: number;
-  viewingDay?: number;
-  viewingMonth?: number;
-  viewingYear?: number;
+  date?: {
+    viewingDay: number;
+    viewingMonth: number;
+    viewingYear: number;
+  };
   duration?: number;
   link?: string;
   score?: number;

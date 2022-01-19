@@ -16,10 +16,52 @@ export class FilmController {
     this.filmService
       .insertFilm(req.body)
       .then((result) => {
-        res.status(200).json(result);
+        res.status(201).json(result);
       })
       .catch((error) => {
         res.status(500).json(error);
       });
   }
+  // public getFilm(
+  //   req: express.Request,
+  //   res: express.Response,
+  //   next: express.NextFunction
+  // ): void {
+  //   this.filmService
+  //     .getFilm(req.body)
+  //     .then((result) => {
+  //       res.status(200).json(result);
+  //     })
+  //     .catch((error) => {
+  //       res.status(500).json(error);
+  //     });
+  // }
+  // public deleteFilm(
+  //   req: express.Request,
+  //   res: express.Response,
+  //   next: express.NextFunction
+  // ): void {
+  //   this.filmService
+  //     .deleteFilm(req.body)
+  //     .then((result) => {
+  //       res.status(200).json(result);
+  //     })
+  //     .catch((error) => {
+  //       res.status(500).json(error);
+  //     });
+  // }
+  // public deleteFilm(
+  //   req: express.Request,
+  //   res: express.Response,
+  //   next: express.NextFunction
+  // ): void {
+  //   this.filmService
+  //     .deleteFilm(req.body)
+  //     .then((result) => {
+  //       res.status(200).json(result);
+  //     })
+  //     .catch((error) => {
+  //       res.status(500).json(error);
+  //     });
+  // }
 }

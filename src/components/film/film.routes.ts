@@ -19,7 +19,6 @@ export class FilmRoutes {
 
   constructor(api: Router, mongoRepository: MongoRepository) {
     this._api = api;
-    // this._api.use(fileUpload());
     this._filmModels = new FilmModels(mongoRepository);
     this._filmServices = new FilmServices(this._filmModels);
     this._filmController = new FilmController(this._filmServices);
@@ -35,22 +34,29 @@ export class FilmRoutes {
         this._filmController.insertFilm.bind(this._filmController)
       );
     // this._api
+    //   .route(`${PREFIX_PATH}/film`)
+    //   .get(
+    //     this._filmValidator.findFilm.bind(this._filmValidator),
+    //     this._filmController.getFilm.bind(this._filmController)
+    //   );
+
+    // this._api
+    //   .route(`${PREFIX_PATH}/film`)
+    //   .delete(
+    //     this._filmValidator.deleteFilm.bind(this._filmValidator),
+    //     this._filmController.deleteFilm.bind(this._filmController)
+    //   );
+    // this._api
+    //   .route(`${PREFIX_PATH}/lastFilm`)
+    //   .get(
+    //     this._filmValidator.findLastFilmSchema.bind(this._filmValidator),
+    //     this._filmController.getLastFilm.bind(this._filmController)
+    //   );
+    // this._api
     //   .route(`${PREFIX_PATH}/lastFilm`)
     //   .delete(
     //     this._filmValidator.deleteLastFilm.bind(this._filmValidator),
     //     this._filmController.deleteLastFilm.bind(this._filmController)
-    //   );
-    // this._api
-    //   .route(`${PREFIX_PATH}/film`)
-    //   .get(
-    //     this._filmValidator.findFilm.bind(this._filmValidator),
-    //     this._filmController.findFilm.bind(this._filmController)
-    //   );
-    // this._api
-    //   .route(`${PREFIX_PATH}/deleteFilm`)
-    //   .post(
-    //     this._filmValidator.deleteFilm.bind(this._filmValidator),
-    //     this._filmController.deleteFilm.bind(this._filmController)
     //   );
   }
 }
